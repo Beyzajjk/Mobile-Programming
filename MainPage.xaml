@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Application1.MainPage">
+    <StackLayout Background="White" >
+        <VerticalStackLayout >
+            <Image Source="profile.png" WidthRequest="50" HeightRequest="50"/>
+            <Label Text="Sales Rep."  TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <Label Text="Name" 
+                   FontSize="20"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   FontAttributes="Bold"
+                   WidthRequest="150"
+                   />
+            <Entry x:Name="StuName" 
+                   WidthRequest="200" TextColor="Black" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center"  >
+            <Label Text="Surname" 
+                 FontSize="20"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   FontAttributes="Bold"  
+                   WidthRequest="150"/>
+            <Entry x:Name="StuSurname"
+                   WidthRequest="200" TextColor="Black" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center"  >
+            <Label Text="Phone Number" 
+                 FontSize="20"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   FontAttributes="Bold"  
+                   WidthRequest="150"/>
+            <Entry x:Name="PhoneNum"
+                   WidthRequest="200"
+                   Keyboard="Telephone" TextColor="Black" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <RadioButton x:Name="Radio1" />
+            <Label Text="Male" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            <RadioButton x:Name="Radio2"/>
+            <Label Text="Female" TextColor="Black" FontSize="20" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+        <Label Text="Interest To Cover" 
+               HorizontalOptions="Center" VerticalOptions="Center"
+               FontSize="20" FontAttributes="Bold" 
+               TextColor="Black" />
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <CheckBox x:Name="Check1"/>
+            <Image Source="boat.png" WidthRequest="50" HeightRequest="50" />
+            <CheckBox x:Name="Check2"/>
+            <Image Source="house.png" WidthRequest="50" HeightRequest="50" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <CheckBox x:Name="Check3"/>
+            <Image Source="paint.png" />
+            <CheckBox x:Name="Check4"/>
+            <Image Source="football.png" />
+        </HorizontalStackLayout>
+        <StackLayout BackgroundColor="DarkBlue">
+            <Button x:Name="Add_Button" Text="ADD" FontAttributes="Bold"
+                    Clicked="Add_Button_Clicked" 
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    WidthRequest="200"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center"
+                     WidthRequest="200" HeightRequest="200" >
+            <Label Text="Name   Surname "  FontSize="20" TextColor="Black" />
+            <ListView   x:Name="Name_Surname_View" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" TextColor="Black" />
+                                <BoxView  WidthRequest="50" Color="White" />
+                                <Label Text="{Binding Surname}" TextColor="Black" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout BackgroundColor="DarkBlue">
+            <Button x:Name="Show_Button" FontAttributes="Bold" Clicked="Show_Button_Clicked"
+                    Text="SHOW" TextColor="Black" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" />
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>
